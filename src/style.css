@@ -1,0 +1,12 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f3f3;
+}
+.main-navbar__container {
+  display: flex;
+  gap: 2vw;}
+
+  ul {
+    display: flex;
+    gap: 5vw;
+  }
