@@ -1,6 +1,13 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
-  background-color: #f3f3f3;
 }
 
 .main-navbar__container {
@@ -8,7 +15,7 @@ body {
   gap: 2vw;
 }
 
-ul {
+.main-navbar__menu {
   display: flex;
   gap: 5vw;
 }
@@ -16,13 +23,22 @@ ul {
 .main-navbar {
   display: flex;
   padding: 10px;
-  background-color: grey;
+  background-color: black;
 }
 
-.main-navbar__menu > li {
+.main-navbar__menu__item {
   list-style: none;
   margin-left: 15px;
   background-color: white;
   padding: 12px;
   border-radius: 24px;
+}
+
+.footer {
+  background-color: black;
+  color: #f3f3f3;
+  position: fixed;
+  bottom: 0;
+  padding: 1rem 3rem;
+  width: 100%;
 }
