@@ -10,3 +10,16 @@ body {
     display: flex;
     gap: 5vw;
   }
+
+  .main-navbar {
+    display: flex; 
+    padding: 10px;
+    background-color: grey;
+  }
+.main-navbar__menu >li{
+  list-style: none;
+  margin-left: 15px;
+  background-color: white;
+  padding: 12px;
+  border-radius: 24px;
+}
