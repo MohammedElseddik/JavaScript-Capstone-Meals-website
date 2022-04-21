@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cookie&family=Lato:wght@400;700;900&display=swap');
 
-
 *,
 *::before,
 *::after {
@@ -84,10 +83,6 @@ body {
   background-color: #ab838374;
 }
 
-.meal-card:hover .reactions {
-
-}
-
 .heart-background {
   fill: white;
 }
@@ -100,12 +95,14 @@ body {
   color: #fff;
   font-size: 1.8rem;
   font-weight: 900;
+  text-shadow: 1px 1px #000;
 }
 
 .commentBtn {
   /* background: rgba(255, 255, 255, 0.334); */
   background: none;
   border-radius: 8px;
+
   /* border: 4px solid rgb(255, 255, 255); */
   border: none;
   color: rgb(255, 255, 255);
@@ -121,8 +118,6 @@ body {
   background-color: #fff;
   color: rgb(46, 46, 46);
 }
-
-
 
 .footer {
   background-color: black;

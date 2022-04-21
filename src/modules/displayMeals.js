@@ -1,13 +1,12 @@
-import fetchMeals from "./fetchMeals.js";
-import renderMeals from "./renderMeals.js";
+import fetchMeals from './fetchMeals.js';
+import renderMeals from './renderMeals.js';
 
 const displayMeals = async (url) => {
-    //fetch data
-    const data = await fetchMeals(url);
-    console.log(data);
+  // fetch data
+  const data = await fetchMeals(url);
 
-    //show data
-    renderMeals(data);
-}
+  // show data
+  renderMeals(data);
+};
 
 export default displayMeals;
