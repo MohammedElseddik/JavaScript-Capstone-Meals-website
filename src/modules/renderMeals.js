@@ -1,16 +1,18 @@
 const mealsContainer = document.querySelector('.meals-container');
 const renderMeals = ({ meals }) => {
+  console.log(meals);
   if (!meals) {
     const titeMessage = document.createElement('h2');
     titeMessage.className = 'result-message';
     titeMessage.textContent = 'error message change it later';
     mealsContainer.innerHTML = null;
   }
-  meals.forEach((meal) => {
+  meals.forEach((meal, index) => {
     const { idMeal, strMeal, strMealThumb } = meal;
     const mealCard = document.createElement('div');
     mealCard.className = 'meal-card';
-    mealCard.id = idMeal;
+    mealCard.id = index;
+    mealCard.setAttribute('data-id', idMeal);
     mealCard.style.backgroundImage = `url(${strMealThumb})`;
     const mealTitle = document.createElement('p');
     mealTitle.className = 'meal-title';

@@ -16,6 +16,14 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
 .main-navbar__container {
   display: flex;
   gap: 2vw;
@@ -122,8 +130,131 @@ body {
 .footer {
   background-color: black;
   color: #f3f3f3;
-  position: fixed;
   bottom: 0;
   padding: 1rem 3rem;
   width: 100%;
+}
+
+/* popup */
+
+.popup {
+  display: none;
+  box-shadow: 5px 2px 13px 6px grey;
+  background-color: #fff;
+  width: 30%;
+  height: 80%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 17px;
+  text-align: center;
+  overflow: scroll;
+  z-index: 29;
+}
+
+.img-container {
+  width: 100%;
+  height: 55%;
+}
+
+.meal-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 17px 17px 0 0;
+}
+
+.closeBtn {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: block;
+  font-size: 35px;
+  font-weight: bold;
+  color: #000;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 1;
+  background: #fff;
+  transition: all 0.4s ease-in;
+}
+
+.closeBtn:hover {
+  background: #dae6e3;
+  color: red;
+  transform: rotate(180deg);
+}
+
+.popup-meal-recipe {
+  font-size: 1.4rem;
+  text-align: justify;
+  margin: 20px 0;
+  line-height: 25px;
+}
+
+.ingredients {
+  display: flex;
+  list-style: none;
+  font-size: 1.8rem;
+  flex-direction: column;
+}
+
+.video-link {
+  display: block;
+  width: 150px;
+  position: relative;
+  margin: 10px auto;
+  text-align: center;
+  background-color: #3ebd71;
+  border-radius: 20px;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 0;
+}
+
+.info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  grid-template-rows: auto;
+  gap: 20px;
+  justify-items: center;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2em;
+  border: 4px solid #3ebd71;
+  border-radius: 8px;
+}
+
+.filter {
+  display: none;
+  position: fixed;
+  top: 0;
+  opacity: 0.8;
+  filter: blur(20px);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #b8ccc6;
+}
+
+.show {
+  display: block;
 }
