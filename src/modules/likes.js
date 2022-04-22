@@ -1,16 +1,12 @@
-export const getLikesNumber = (url) => {
-  console.log('hello')
-  const likesNumber = document.querySelectorAll('.heart-background');
-  console.log(likesNumber);
-  likesNumber.forEach((likeBtn) => {
-    likeBtn.addEventListener('click', () => {
-      console.log('hello')
-      console.log(likeBtn);
-      //likeBtn.classList.add('red');
-      postLikes(url , likeBtn);
-    })
-  } )
-}
+export const fetchLikes = async (url) => {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    throw Error(error);
+  }
+};
 
 const postLikes = async (url, likeBtn) => {
   await fetch(url, {
@@ -21,25 +17,22 @@ const postLikes = async (url, likeBtn) => {
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
-  })
-  await fetchLikes(url);
-  await displaylikes(url, likeBtn);
-}
-
-
-export const fetchLikes = async (url) => {
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log(data)
-    return data;
-  } catch (error) {
-    throw Error(error);
-  }
+  });
+  await fetchLikes(url, likeBtn);
 };
 
+const displaylikes = async (likeBtn) => {
+  likeBtn.nextSibling.textContent = parseInt(likeBtn.nextSibling.textContent, 10) + 1;
+};
 
-const displaylikes = async (url) => {
-  const data = await fetchLikes(url);
-  
-}
+export const getLikesNumber = (url) => {
+  const likesNumber = document.querySelectorAll('.heart-background');
+
+  likesNumber.forEach((likeBtn) => {
+    likeBtn.addEventListener('click', () => {
+      // likeBtn.classList.add('red');
+      postLikes(url, likeBtn);
+      displaylikes(likeBtn);
+    });
+  });
+};
