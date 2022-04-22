@@ -1,6 +1,7 @@
-import fetchMeals from "./fetchMeals.js";
-import renderMeals from "./renderMeals.js";
-import selectCard from "./popup.js";
+import fetchMeals from './fetchMeals.js';
+import renderMeals from './renderMeals.js';
+import selectCard from './popup.js';
+
 const displayMeals = async (url) => {
   // fetch data
   const data = await fetchMeals(url);

@@ -1,6 +1,6 @@
 const mealsContainer = document.querySelector('.meals-container');
 const renderMeals = ({ meals }) => {
-  console.log(meals)
+  console.log(meals);
   if (!meals) {
     const titeMessage = document.createElement('h2');
     titeMessage.className = 'result-message';

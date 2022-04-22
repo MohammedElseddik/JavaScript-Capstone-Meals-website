@@ -16,7 +16,7 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-h2{
+h2 {
   font-size: 3rem;
 }
 
@@ -202,7 +202,6 @@ h3 {
   font-size: 1.8rem;
   flex-direction: column;
 }
-
 
 .video-link {
   display: block;
