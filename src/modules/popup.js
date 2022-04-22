@@ -44,7 +44,7 @@ const buildPopup = (event, meals) => {
   const {
     idMeal, strMeal, strMealThumb, strInstructions,
   } = meals[event.target.id];
-  popup.setAttribute = ('id', meals[event.target.id])
+  popup.setAttribute = ('id', meals[event.target.id]);
   popup.setAttribute = ('data-id', idMeal);
   popup.innerHTML = `
   <button class="closeBtn">&times;</button>
