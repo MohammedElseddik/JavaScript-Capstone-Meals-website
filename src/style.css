@@ -97,6 +97,11 @@ h3 {
 
 .heart-icon {
   width: 30px;
+  transition: all 0.2s;
+}
+
+.heart-icon:active{
+  transform: scale(1.2);
 }
 
 .likes-number {
@@ -257,4 +262,8 @@ textarea {
 
 .show {
   display: block;
+}
+
+.red {
+  fill: red;
 }
