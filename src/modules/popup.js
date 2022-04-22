@@ -1,10 +1,6 @@
 const showAndHidePopup = (element, popup) => {
   const closeBtn = document.querySelector('.closeBtn');
   const filter = document.querySelector('.filter');
-  if (
-    element.target.tagName === 'path'
-    || element.target.classList.contains('likes-number')
-  ) return;
   filter.classList.add('show');
   popup.classList.add('show');
   document.body.style.overflow = 'hidden';
@@ -18,15 +14,7 @@ const showAndHidePopup = (element, popup) => {
 
 const buildPopup = (event, meals) => {
   const popup = document.querySelector('.popup');
-  console.log(event.target.id);
-  console.log(meals[2]);
-  console.log(meals[event.target.id]);
   const mealitems = Object.entries(meals[event.target.id]);
-  // const ingredientsArray = [];
-  // for (let i = 9; i <= 28; i += 1) {
-
-  // }
-  // console.log(ingredientsArray)
   const ingredients = mealitems.filter(
     ([item, value]) => item.includes('strIngredient') && value.trim() !== '',
   );
@@ -39,7 +27,6 @@ const buildPopup = (event, meals) => {
   for (let i = 0; i < ingredients.length; i += 1) {
     recipe += `<li>${ingredients[i][1]}: ( ${measures[i][1]} )</li>`;
   }
-  console.log(recipe);
 
   const {
     idMeal, strMeal, strMealThumb, strInstructions,
@@ -93,6 +80,10 @@ const selectCard = ({ meals }) => {
   const mealCard = document.querySelectorAll('.meal-card');
   mealCard.forEach((card) => {
     card.addEventListener('click', (event) => {
+      if (
+        event.target.tagName === 'path'
+        || event.target.classList.contains('likes-number')
+      ) return;
       buildPopup(event, meals);
     });
   });

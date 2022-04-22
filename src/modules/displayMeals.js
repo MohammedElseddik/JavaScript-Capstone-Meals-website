@@ -1,15 +1,14 @@
 import fetchMeals from './fetchMeals.js';
 import renderMeals from './renderMeals.js';
 import selectCard from './popup.js';
+import { getLikesNumber, fetchLikes } from './likes.js';
 
-const displayMeals = async (url) => {
-  // fetch data
-  const data = await fetchMeals(url);
-  console.log(data);
-  // get data
-  // show data
-  renderMeals(data);
-  selectCard(data);
+const displayMeals = async (mealUrl, url) => {
+  const mealData = await fetchMeals(mealUrl);
+  const likes = await fetchLikes(url);
+  renderMeals(mealData, likes);
+  getLikesNumber(url);
+  selectCard(mealData);
 };
 
 export default displayMeals;
