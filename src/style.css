@@ -1,0 +1,346 @@
+@import url("https://fonts.googleapis.com/css2?family=Cookie&family=Lato:wght@400;700;900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background-image: url("https://i0.wp.com/diplomartbrussels.com/wp-content/uploads/2020/09/food-background-images-94-images-in-co-381169-png-images-pngio-food-background-png-1440_619.png?ssl=1");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.5rem;
+}
+
+.main-navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: #f5f6f1cc;
+  border-radius: 0 0 17px 17px;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+.brand-icon {
+  width: 45px;
+}
+
+.search-form {
+  width: 20%;
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  width: 100%;
+  font-size: 1rem;
+  border-color: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 17px;
+  color: black;
+  outline: none;
+  margin: 0;
+}
+
+.result-message {
+  display: none;
+  margin-top: 22rem;
+  width: 100%;
+  height: 100vh;
+  color: crimson;
+  text-align: center;
+  font-size: 5rem;
+}
+
+.meals-container {
+  display: flex;
+  flex-wrap: wrap;
+  width: 85%;
+  max-width: 1024px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  flex-grow: 1;
+  margin-top: 105px;
+}
+
+.meal-card {
+  display: flex;
+  margin: 10px;
+  width: 250px;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+  justify-content: flex-end;
+  border-radius: 17px;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.meal-title {
+  display: block;
+  color: rgb(247, 246, 246);
+  margin: 0 0 30px 12px;
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-shadow: 4px 3px 3px #000;
+}
+
+.reactions {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 0 0 17px 17px;
+  padding: 5px 5px;
+  background-color: #ab838374;
+}
+
+.heart-background {
+  fill: white;
+}
+
+.heart-icon {
+  width: 30px;
+  transition: all 0.2s;
+}
+
+.heart-icon:active {
+  transform: scale(1.2);
+}
+
+.likes-number {
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-shadow: 1px 1px #000;
+}
+
+.commentBtn {
+  /* background: rgba(255, 255, 255, 0.334); */
+  background: none;
+  border-radius: 8px;
+
+  /* border: 4px solid rgb(255, 255, 255); */
+  border: none;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 5px 10px;
+  transition: all 0.3s ease-in;
+  text-shadow: 1px 1px #000;
+}
+
+.commentBtn:hover {
+  background-color: #fff;
+  color: rgb(46, 46, 46);
+}
+
+.footer {
+  background-color: #f5f6f1cc;
+  border-radius: 17px 17px 0 0;
+  bottom: 0;
+  padding: 3rem 3rem;
+  width: 100%;
+  font-size: 2rem;
+  color: #000;
+  text-align: center;
+  font-weight: 900;
+}
+
+/* popup */
+.popup {
+  display: none;
+  box-shadow: 5px 2px 13px 6px grey;
+  background-color: #fff;
+  width: 70%;
+  height: 80%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+  border-radius: 17px;
+  text-align: center;
+  overflow: scroll;
+  z-index: 29;
+  padding: 2rem;
+}
+
+.img-container {
+  width: 100%;
+}
+
+.meal-img {
+  width: 90%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 17px 17px 0 0;
+}
+
+.closeBtn {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: block;
+  font-size: 35px;
+  font-weight: bold;
+  color: #000;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 1;
+  background: #fff;
+  transition: all 0.4s ease-in;
+}
+
+.closeBtn:hover {
+  background: #dae6e3;
+  color: red;
+  transform: rotate(180deg);
+}
+
+.popup-meal-recipe {
+  font-size: 1.4rem;
+  text-align: justify;
+  margin: 20px 0;
+  line-height: 25px;
+}
+
+.ingredients {
+  display: flex;
+  list-style: none;
+  font-size: 1.8rem;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.video-link {
+  display: block;
+  width: 150px;
+  position: relative;
+  margin: 10px auto;
+  text-align: center;
+  background-color: #3ebd71;
+  border-radius: 20px;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 0;
+}
+
+.info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  grid-template-rows: auto;
+  gap: 20px;
+  justify-items: center;
+  margin: 0 auto;
+  padding: 15px 0;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2em;
+  border: 4px solid #3ebd71;
+  border-radius: 8px;
+}
+
+.filter {
+  display: none;
+  position: fixed;
+  top: 0;
+  opacity: 0.8;
+  filter: blur(20px);
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #b8ccc6;
+}
+
+.allComments {
+  display: flex;
+  list-style: none;
+  font-size: 1.8rem;
+  flex-direction: column;
+}
+
+#submit {
+  padding: 3px;
+}
+
+#submit:hover {
+  cursor: pointer;
+}
+
+.show {
+  display: block;
+}
+
+.red {
+  fill: red;
+}
+
+@media (max-width: 600px) {
+  body {
+    background-size: 220%;
+    background-position: left top;
+    background-attachment: unset;
+  }
+
+  .search-form {
+    width: 60%;
+  }
+
+  .meals-container {
+    width: 100%;
+  }
+
+  .meal-card {
+    width: 85%;
+  }
+
+  .popup {
+    width: 90%;
+    height: 90%;
+    padding: 25px 5px;
+  }
+
+  form {
+    width: 85%;
+  }
+}
