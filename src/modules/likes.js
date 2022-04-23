@@ -22,15 +22,14 @@ const postLikes = async (url, likeBtn) => {
 };
 
 const displaylikes = async (likeBtn) => {
+  if (likeBtn.nextSibling.textContent === '') { likeBtn.nextSibling.textContent = 0; }
   likeBtn.nextSibling.textContent = parseInt(likeBtn.nextSibling.textContent, 10) + 1;
 };
 
 export const getLikesNumber = (url) => {
   const likesNumber = document.querySelectorAll('.heart-background');
-
   likesNumber.forEach((likeBtn) => {
     likeBtn.addEventListener('click', () => {
-      // likeBtn.classList.add('red');
       postLikes(url, likeBtn);
       displaylikes(likeBtn);
     });

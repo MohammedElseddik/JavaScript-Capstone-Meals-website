@@ -8,7 +8,7 @@ const displayMeals = async (mealUrl, url) => {
   const likes = await fetchLikes(url);
   renderMeals(mealData, likes);
   getLikesNumber(url);
-  selectCard(mealData);
+  selectCard(mealData, url);
 };
 
 export default displayMeals;

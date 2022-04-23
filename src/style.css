@@ -146,7 +146,7 @@ h3 {
   display: none;
   box-shadow: 5px 2px 13px 6px grey;
   background-color: #fff;
-  width: 30%;
+  width: 70%;
   height: 80%;
   position: fixed;
   transform: translate(-50%, -50%);
@@ -156,6 +156,7 @@ h3 {
   text-align: center;
   overflow: scroll;
   z-index: 29;
+  padding: 2rem;
 }
 
 .img-container {
@@ -164,7 +165,7 @@ h3 {
 }
 
 .meal-img {
-  width: 100%;
+  width: 90%;
   height: 100%;
   border-radius: 17px 17px 0 0;
 }
@@ -258,6 +259,13 @@ textarea {
   width: 100%;
   height: 100%;
   background-color: #b8ccc6;
+}
+
+.allComments {
+  display: flex;
+  list-style: none;
+  font-size: 1.8rem;
+  flex-direction: column;
 }
 
 .show {
