@@ -10,7 +10,14 @@ export const displayComments = (data) => {
     commentNumber.textContent = `comments (${data.length})`;
     commentHolder.appendChild(li);
   });
+  commentCounter(commentHolder);
 };
+
+export const commentCounter = (commentHolder) => {
+  const commentNumber = [...commentHolder.children].length;
+  return commentNumber.length;
+}
+
 
 export const retriveComments = async (itemId) => {
   try {
