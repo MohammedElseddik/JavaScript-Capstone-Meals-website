@@ -4,9 +4,11 @@ The Meal recie website provides diferent recipes for world wide meals using the 
 
 ## Major languages
 
-- HTML 
-- CSS 
-- JavaScript
+- HTML
+- CSS
+- JavaScript (ES6 syntax and Modules)
+- Webpack
+-testing
 
 ## Deployment
 
