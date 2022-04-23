@@ -12,7 +12,7 @@ The Meal recie website provides diferent recipes for world wide meals using the 
 
 ## Deployment
 
-https://mohammedelseddik.github.io/Awesome-books/
+https://mohammedelseddik.github.io/JavaScript-Capstone-Meals-website/
 
 ## Getting Started
 
