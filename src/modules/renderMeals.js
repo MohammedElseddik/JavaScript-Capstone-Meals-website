@@ -1,9 +1,10 @@
 const mealsContainer = document.querySelector('.meals-container');
 const renderMeals = ({ meals }, liked) => {
+  mealsContainer.innerHTML= '';
   if (!meals) {
-    const titeMessage = document.createElement('h2');
+    const titeMessage = document.querySelector('.error-message');
     titeMessage.className = 'result-message';
-    titeMessage.textContent = 'error message change it later';
+    titeMessage.textContent = 'sorry, no meals matched your search';
     mealsContainer.innerHTML = null;
   }
   meals.forEach((meal, index) => {
