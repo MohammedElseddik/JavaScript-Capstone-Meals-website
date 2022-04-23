@@ -1,10 +1,9 @@
 const mealsContainer = document.querySelector('.meals-container');
 const renderMeals = ({ meals }, liked) => {
-  mealsContainer.innerHTML= '';
+  mealsContainer.innerHTML = '';
+  const titeMessage = document.querySelector('.result-message');
   if (!meals) {
-    const titeMessage = document.querySelector('.error-message');
-    titeMessage.className = 'result-message';
-    titeMessage.textContent = 'sorry, no meals matched your search';
+    titeMessage.classList.add('show');
     mealsContainer.innerHTML = null;
   }
   meals.forEach((meal, index) => {
@@ -34,6 +33,7 @@ const renderMeals = ({ meals }, liked) => {
         likesNumber.textContent = `${liked[i].likes}`;
       }
     }
+    titeMessage.classList.remove('show');
     reactions.appendChild(heartIcon);
     reactions.appendChild(likesNumber);
     reactions.appendChild(commentBtn);
