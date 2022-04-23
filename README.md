@@ -8,7 +8,7 @@ The Meal recie website provides diferent recipes for world wide meals using the 
 - CSS
 - JavaScript (ES6 syntax and Modules)
 - Webpack
--testing
+- testing
 
 ## Deployment
 
