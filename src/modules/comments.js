@@ -1,5 +1,10 @@
 export const Url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/CUZJYbcXhLNNl7JTkeKF/comments';
 
+export const commentCounter = (commentHolder) => {
+  const commentNumber = [...commentHolder.children].length;
+  return commentNumber.length;
+};
+
 export const displayComments = (data) => {
   const commentHolder = document.querySelector('.allComments');
   const commentNumber = document.querySelector('.none');
@@ -12,12 +17,6 @@ export const displayComments = (data) => {
   });
   commentCounter(commentHolder);
 };
-
-export const commentCounter = (commentHolder) => {
-  const commentNumber = [...commentHolder.children].length;
-  return commentNumber.length;
-}
-
 
 export const retriveComments = async (itemId) => {
   try {
