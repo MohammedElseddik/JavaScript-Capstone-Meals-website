@@ -1,8 +1,5 @@
 const mealsContainer = document.querySelector('.meals-container');
 const renderMeals = ({ meals }, liked) => {
-  console.log(meals);
-  console.log('rebbouh');
-  console.log(liked);
   if (!meals) {
     const titeMessage = document.createElement('h2');
     titeMessage.className = 'result-message';
@@ -23,7 +20,8 @@ const renderMeals = ({ meals }, liked) => {
     reactions.className = 'reactions';
     const commentBtn = document.createElement('button');
     commentBtn.className = 'commentBtn';
-    commentBtn.textContent = '(34)  Comments';
+    commentBtn.id = index;
+    commentBtn.textContent = 'Comments';
     const heartIcon = document.createElement('span');
     heartIcon.className = 'heart-background';
     heartIcon.id = idMeal;

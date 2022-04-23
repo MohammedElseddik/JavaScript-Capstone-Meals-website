@@ -1,3 +1,7 @@
+import {
+  getcomments, retriveComments,
+} from './comments.js';
+
 const showAndHidePopup = (element, popup) => {
   const closeBtn = document.querySelector('.closeBtn');
   const filter = document.querySelector('.filter');
@@ -41,39 +45,36 @@ const buildPopup = (event, meals) => {
   <div class="info">
     <h2>${strMeal}</h2>
     <p class="popup-meal-recipe">${strInstructions}</p>
-    <h3>Ingredients:</h3>
+    <h3><strong>Ingredients:</strong></h3>
     <ul class = "ingredients">${recipe}</ul>
 
     <a class="video-link" href="https://www.youtube.com/watch?v=IO0issT0Rmc"
       >Youtube Video</a
     >
     <h3 class="none">Comments (0)</h3>
-    <ul class="allComments none">
-      No comments yet!<br />
-      Add comments
-    </ul>
+    <ul class="allComments none"></ul>
     <h3 class="formHeader none">Add a comment</h3>
     <form id="form">
-      <label for="name">Name:</label>
       <input
         type="text"
         name="name"
-        id="name"
+        class="name"
         placeholder="Your name:"
         required
       />
       <textarea
         name="comment"
-        id="comment"
+        class="comment"
         rows="5"
         placeholder="Your comment:"
         required
       ></textarea>
-      <button type="submit" id="submit">Add Comment</button>
+      <button class="submitBtn" type="submit" id="submit">Add Comment</button>
     </form>
   </div>
   `;
   showAndHidePopup(event, popup);
+  getcomments(event, meals);
 };
 
 const selectCard = ({ meals }) => {
@@ -85,6 +86,11 @@ const selectCard = ({ meals }) => {
         || event.target.classList.contains('likes-number')
       ) return;
       buildPopup(event, meals);
+      const buildComments = async () => {
+        const comments = await retriveComments(`${meals[event.target.id].idMeal}`);
+        return comments;
+      };
+      buildComments();
     });
   });
 };
