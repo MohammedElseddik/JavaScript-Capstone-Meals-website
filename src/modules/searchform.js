@@ -7,8 +7,6 @@ const mealInput = document.querySelector('.meal-input');
 
 form.addEventListener('keyup', (e) => {
   e.preventDefault();
-  console.log('hello');
-
   const { value } = mealInput;
   console.log(value);
   if (!value) return;
