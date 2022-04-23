@@ -1,7 +1,19 @@
+export const likesCounter = (data, id) => {
+  const likeArryLength = data.length;
+  let likesNumber;
+  if (likeArryLength === 0) {
+    likesNumber = 0;
+    return likesNumber;
+  }
+  likesNumber = data[id].likes;
+  return likesNumber;
+};
+
 export const fetchLikes = async (url) => {
   try {
     const response = await fetch(url);
     const data = await response.json();
+    likesCounter(data);
     return data;
   } catch (error) {
     throw Error(error);
